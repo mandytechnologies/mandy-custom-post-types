@@ -36,15 +36,3 @@ function vtl_cpt_activate() {
 }
 
 register_activation_hook(__FILE__, 'vtl_cpt_activate');
-
-define('MANDY_CUSTOM_POST_TYPE_VERSION', '3.0.0');
-
-if (!class_exists('\Skeletor\Plugin_Updater')) {
-	require_once(__DIR__ . '/class--plugin-updater.php');
-}
-
-$updater = new \Skeletor\Plugin_Updater(
-	plugin_basename(__FILE__),
-	MANDY_CUSTOM_POST_TYPE_VERSION,
-	'https://github.com/mandytechnologies/mandy-tabbed-content/blob/main/package.json'
-);
